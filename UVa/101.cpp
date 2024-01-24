@@ -5,10 +5,11 @@ int main()
     int n,a,b,t;
     cin>>n;
     int pos[n];
-    for(int i+0;i<n;i++){
-        pos[i]=i;
-    }
     stack <int> st[n],p,q;
+    for(int i=0;i<n;i++){
+        pos[i]=i;
+        st[i].push(i);
+    }
     string s,c;
     while(1){
         cin>>s;
@@ -102,6 +103,7 @@ int main()
             cout<<" "<<p.top();
             p.pop();
         }
+        cout<<"\n";
     }
     return 0;
 }
