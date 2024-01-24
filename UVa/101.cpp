@@ -92,4 +92,16 @@ int main()
             }
         }
     }
+    for(int i=0;i<n;i++){
+        cout<<i<<":";
+        while(!st[i].empty()){
+            p.push(st[i].top());
+            st[i].pop();
+        }
+        while(!p.empty()){
+            cout<<" "<<p.top();
+            p.pop();
+        }
+    }
+    return 0;
 }
