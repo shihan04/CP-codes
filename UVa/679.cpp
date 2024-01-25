@@ -21,12 +21,12 @@ void reset_FBT(){
 void drop_ball(int pos){
     if(node[pos].depth==D) ans=pos;
     else if(!node[pos].flag){
-        node[pos].flag=!node[pos].flag;
-        
+        node[pos].flag=true;
+        drop_ball(pos*2);
     }
     else if(node[pos].flag){
-        node[pos].flag=!node[pos].flag;
-        
+        node[pos].flag=false;
+        drop_ball(pos*2+1);
     }
 }
 
