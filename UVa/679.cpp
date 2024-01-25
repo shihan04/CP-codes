@@ -10,7 +10,7 @@ FBT node[1048576];
 int ans,D;
 
 void reset_FBT(){
-    for(int i=1,j=1,k=1;i<=D;i++,j<<=2){
+    for(int i=1,j=1,k=1;i<=D;i++,j<<=1){
         for(int o=1;o<=j;o++,k++){
             node[k].flag=false;
             node[k].depth=i;
