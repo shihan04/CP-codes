@@ -3,10 +3,11 @@ using namespace std;
 int main()
 {
     int l,D,I,n,len;
-    bool flag;
-    cin>>l;
+    //cin>>l;
+    scanf("%d",&l);
     while(l--){
-        cin>>D>>I;
+        //cin>>D>>I;
+        scanf("%d%d",&D,&I);
         vector <int> v;
         n=1<<(D-1);
         v.push_back(n);
@@ -17,8 +18,11 @@ int main()
                 v.push_back(v[j]+n);
             }
         }
-        cout<<v[I-1]<<"\n";
+        n=v[I-1];
+        //cout<<v[I-1]<<"\n";
+        printf("%d\n",n);
     }
-    cin>>l;
+    //cin>>l;
+    scanf("%d",&l);
     return 0;
 }
