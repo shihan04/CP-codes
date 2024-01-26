@@ -13,14 +13,11 @@ int main()
         a*=2;
     }
     sort(v.begin(),v.end());
-    for(int i=0;i<limit;i++){
-        cout<<"yay\n";
-        cin>>m;
-        if(m==0) break;
+    while(cin>>m){
+        if(m==0) return 0;
         auto it=v.begin();
         auto lb=lower_bound(v.begin(),v.end(),m);
         n=v[lb-it];
         cout<<n<<"\n";
     }
-    return 0;
 }
