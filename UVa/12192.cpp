@@ -29,6 +29,14 @@ int main()
         cin>>q;
         while(q--){
             cin>>l>>r;
+            max=0;
+            for(int i=0;i<v.size();i++){
+                if(v[i].size()<=max || v[i][v[i].size()-1]<l || v[i][0]>r) continue;
+                lb=lower_bound(v[i].begin(),v[i].end(),l);
+                ub=upper_bound(v[i].begin(),v[i].end(),r);
+                if(ub-lb>ans) ans=ub-lb;
+            }
+            cout<<ans<<"\n";
         }
         cout<<"-\n";
     }
