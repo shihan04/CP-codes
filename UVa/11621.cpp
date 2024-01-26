@@ -2,8 +2,8 @@
 using namespace std;
 int main()
 {
-    int n,m,limit=1<<31,a=1,b;
-    vector <int> v;
+    long long int n,m,limit=2147483648,a=1,b;
+    vector <long long int> v;
     while(a<=limit){
         b=a;
         while(b<=limit){
