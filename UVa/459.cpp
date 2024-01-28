@@ -37,7 +37,8 @@ int main()
                 }
             }
         }
-        cout<<ans<<"\n\n";
+        cout<<ans<<"\n";
+        if(t) cout<<"\n";
     }
     return 0;
 }
