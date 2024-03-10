@@ -15,17 +15,22 @@ int main()
         bool b=0;
         while(1){
             for(int j=0;j<i;j++){
-                if(abs(2*r-sqrt((x[i]-x[j])*(x[i]-x[j])+(c-y[j])*(c-y[j])))<=0.000001){
+                cout<<i<<"->"<<abs(2*r-sqrt((x[i]-x[j])*(x[i]-x[j])+(c-y[j])*(c-y[j])))<<"\n";
+                if(2*r>=sqrt((x[i]-x[j])*(x[i]-x[j])+(c-y[j])*(c-y[j]))||abs(2*r-sqrt((x[i]-x[j])*(x[i]-x[j])+(c-y[j])*(c-y[j])))<0.000001){
                     b=1;
-                    cout<<c<<"\n";
                     break;
                 }
             }
             if(b || c<r){
-                c+=2*r;
+                c+=r;
                 break;
             }
-            c-=2*r;
+            c-=r;
+        }
+        cout<<c<<"\n";
+        if(c==r){
+            y[i]=c;
+            continue;
         }
         double hi=c,lo=c-2*r;
         int lim=1024;
