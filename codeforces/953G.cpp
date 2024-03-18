@@ -10,9 +10,5 @@ int main()
         else e++;
     }
     if(e>=o) cout<<o;
-    else{
-        if((o-e)%3==0) cout<<e+(o-e)/3;
-        else if(3-(o-e)%3<=e) cout<<e-3+(o-e)%3+((o-e)+3-(o-e)%3)/3;
-        else cout<<0;
-    }
+    else cout<<e+(o-e)/3;
 }
