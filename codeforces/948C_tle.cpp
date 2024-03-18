@@ -14,8 +14,8 @@ int main()
     }
     for(int i=0;i<n;i++){
         ans=0;
-        for(int j=0,k=i;j<=i;j++,k--){
-            ans+=(v[i]>=s[k])?min(t[i],v[i]-s[k]):0;
+        for(int j=0;j<=i;j++){
+            ans+=(v[j]>=s[i]-s[j])?min(t[i],v[j]-s[i]+s[j]):0;
         }
         cout<<ans<<" ";
     }
