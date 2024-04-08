@@ -24,9 +24,11 @@ int main()
         }
         for(int i=0;i<8;i++){
             for(int j=0;j<8;j++){
+                //cout<<c[i][j];
                 b[i][j]=1;
                 if(c[i][j]!='.') b[i][j]=0;
             }
+            //cout<<"\n";
         }
         for(int i=0;i<8;i++){
             for(int j=0;j<8;j++){
@@ -71,25 +73,30 @@ int main()
                     for(int k=j+1;k<=7&&c[i][k]=='.';k++) b[i][k]=0;
                 }
                 else if(c[i][j]=='b'){
-                    for(int k=i-1,l=j-1;k>=0&&l>=0&&c[k][j]=='.';k--,l--) b[k][l]=0;
-                    for(int k=i-1,l=j+1;k>=0&&l<=7&&c[k][j]=='.';k--,l++) b[k][l]=0;
-                    for(int k=i+1,l=j-1;k<=7&&l>=0&&c[k][j]=='.';k++,l--) b[k][l]=0;
-                    for(int k=i+1,l=j+1;k<=7&&l<=7&&c[k][j]=='.';k++,l++) b[k][l]=0;
+                    for(int k=i-1,l=j-1;k>=0&&l>=0&&c[k][l]=='.';k--,l--) b[k][l]=0;
+                    for(int k=i-1,l=j+1;k>=0&&l<=7&&c[k][l]=='.';k--,l++) b[k][l]=0;
+                    for(int k=i+1,l=j-1;k<=7&&l>=0&&c[k][l]=='.';k++,l--) b[k][l]=0;
+                    for(int k=i+1,l=j+1;k<=7&&l<=7&&c[k][l]=='.';k++,l++) b[k][l]=0;
                 }
                 else if(c[i][j]=='q'){
                     for(int k=i-1;k>=0&&c[k][j]=='.';k--) b[k][j]=0;
                     for(int k=i+1;k<=7&&c[k][j]=='.';k++) b[k][j]=0;
                     for(int k=j-1;k>=0&&c[i][k]=='.';k--) b[i][k]=0;
                     for(int k=j+1;k<=7&&c[i][k]=='.';k++) b[i][k]=0;
-                    for(int k=i-1,l=j-1;k>=0&&l>=0&&c[k][j]=='.';k--,l--) b[k][l]=0;
-                    for(int k=i-1,l=j+1;k>=0&&l<=7&&c[k][j]=='.';k--,l++) b[k][l]=0;
-                    for(int k=i+1,l=j-1;k<=7&&l>=0&&c[k][j]=='.';k++,l--) b[k][l]=0;
-                    for(int k=i+1,l=j+1;k<=7&&l<=7&&c[k][j]=='.';k++,l++) b[k][l]=0;
+                    for(int k=i-1,l=j-1;k>=0&&l>=0&&c[k][l]=='.';k--,l--) b[k][l]=0;
+                    for(int k=i-1,l=j+1;k>=0&&l<=7&&c[k][l]=='.';k--,l++) b[k][l]=0;
+                    for(int k=i+1,l=j-1;k<=7&&l>=0&&c[k][l]=='.';k++,l--) b[k][l]=0;
+                    for(int k=i+1,l=j+1;k<=7&&l<=7&&c[k][l]=='.';k++,l++) b[k][l]=0;
                 }
             }
         }
         for(int i=0;i<8;i++){
-            for(int j=0;j<8;j++) ans+=b[i][j];
+            for(int j=0;j<8;j++){
+                ans+=b[i][j];
+                //if(!b[i][j]&&c[i][j]=='.') cout<<'#';
+                //else cout<<c[i][j];
+            }
+            //cout<<"\n";
         }
         cout<<ans<<"\n";
     }
